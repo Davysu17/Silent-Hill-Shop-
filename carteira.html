@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteira - Silent Hill Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .carteira-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid red;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .saldo-grande {
+            font-size: 3em;
+            color: #ff0000;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+
+        .historico {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .historico h3 {
+            color: red;
+            border-bottom: 2px solid red;
+            padding-bottom: 10px;
+        }
+
+        .transacao {
+            background: rgba(50, 50, 50, 0.7);
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .transacao.adicionado {
+            border-left: 5px solid #00aa00;
+        }
+
+        .transacao.removido {
+            border-left: 5px solid #aa0000;
+        }
+
+        .botao-ganhar {
+            background-color: #00aa00;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botao-ganhar:hover {
+            background-color: #00dd00;
+            transform: scale(1.05);
+        }
+
+        .info-box {
+            background: rgba(100, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sua Carteira de Sangue</h1>
+        <nav>
+            <ul>
+                <li><a href="Silent-Hill.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="checkout.html">🛒 Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="carteira-container">
+            <h2>🩸 Seus Pontos de Sangue</h2>
+            
+            <div class="saldo-grande" id="saldo-display">0</div>
+            
+            <p>A moeda de Silent Hill Shop. Use para comprar itens exclusivos!</p>
+
+            <div class="info-box">
+                <strong>💡 Como Ganhar Pontos:</strong>
+                <p>✅ Novo usuário: +500 pontos de bônus</p>
+                <p>✅ Clique no botão abaixo para ganhar 100 pontos diários</p>
+                <p>❌ Compre produtos para gastar seus pontos</p>
+            </div>
+
+            <button class="botao-ganhar" onclick="ganharPontosDiarios()">
+                📈 Ganhar 100 Pontos Diários
+            </button>
+
+            <div class="historico">
+                <h3>Histórico de Transações</h3>
+                <div id="historico-list" style="max-height: 300px; overflow-y: auto;">
+                    <p style="color: #999;">Nenhuma transação registrada ainda</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Silent Hill Shop - 2025</p>
+    </footer>
+
+    <script src="pontos.js"></script>
+    <script>
+        function atualizarDisplay() {
+            const saldo = obterSaldoPontos();
+            document.getElementById('saldo-display').textContent = saldo.toLocaleString('pt-BR');
+            atualizarSaldoPontos();
+        }
+
+        function ganharPontosDiarios() {
+            const ultimoAcesso = localStorage.getItem('ultimo-acesso-pontos');
+            const agora = new Date().toDateString();
+            
+            if (ultimoAcesso === agora) {
+                alert('⏰ Você já ganhou seus pontos hoje! Volte amanhã.');
+                return;
+            }
+            
+            adicionarPontos(100);
+            localStorage.setItem('ultimo-acesso-pontos', agora);
+            
+            // Registrar no histórico
+            registrarTransacao('Ganho Diário', 100, 'adicionado');
+            
+            atualizarDisplay();
+            alert('🎉 Você ganhou 100 Pontos de Sangue!');
+        }
+
+        function registrarTransacao(descricao, valor, tipo) {
+            let historico = JSON.parse(localStorage.getItem('historico-pontos')) || [];
+            
+            historico.unshift({
+                descricao,
+                valor,
+                tipo,
+                data: new Date().toLocaleString('pt-BR')
+            });
+            
+            // Manter apenas os últimas 50 transações
+            if (historico.length > 50) {
+                historico.pop();
+            }
+            
+            localStorage.setItem('historico-pontos', JSON.stringify(historico));
+            exibirHistorico();
+        }
+
+        function exibirHistorico() {
+            const historico = JSON.parse(localStorage.getItem('historico-pontos')) || [];
+            const listElement = document.getElementById('historico-list');
+            
+            if (historico.length === 0) {
+                listElement.innerHTML = '<p style="color: #999;">Nenhuma transação registrada ainda</p>';
+                return;
+            }
+            
+            listElement.innerHTML = historico.map(t => `
+                <div class="transacao ${t.tipo}">
+                    <div>
+                        <strong>${t.descricao}</strong>
+                        <p style="margin: 5px 0; font-size: 0.9em; color: #ccc;">${t.data}</p>
+                    </div>
+                    <div style="font-weight: bold; color: ${t.tipo === 'adicionado' ? '#00aa00' : '#aa0000'};">
+                        ${t.tipo === 'adicionado' ? '+' : '-'}${t.valor}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Inicializar página
+        document.addEventListener('DOMContentLoaded', () => {
+            atualizarDisplay();
+            exibirHistorico();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Silent Hill Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout - Seu Carrinho</h1>
+        <nav>
+            <ul>
+                <li><a href="Silent-Hill.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrinho">
+            <h2>Itens no seu carrinho</h2>
+            <div id="carrinho-vazio" style="display: none; text-align: center; color: #ccc;">
+                <p>Seu carrinho está vazio 😢</p>
+                <a href="Silent-Hill.html" style="color: red; text-decoration: underline;">Voltar ao catálogo</a>
+            </div>
+            <ul id="lista-carrinho"></ul>
+            <p id="total" style="font-size: 1.3em; color: #ff0000; font-weight: bold;">Total: 🩸 0</p>
+            <button onclick="abrirModal()">Finalizar Compra</button>
+            <button onclick="limparCarrinho()">Limpar Carrinho</button>
+        </section>
+    </main>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-confirmacao" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+        <div style="background: rgba(0, 0, 0, 0.9); color: white; padding: 40px; border-radius: 10px; text-align: center; border: 2px solid red; max-width: 400px;">
+            <h2 style="color: red; margin-bottom: 20px;">⚠️ Confirmação Final</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Sua alma será vendida para Silent Hill...</p>
+            <p id="valor-final" style="font-size: 1.3em; color: #ff0000; margin-bottom: 10px; font-weight: bold;">Total: 🩸 0</p>
+            <p id="saldo-aviso" style="font-size: 0.95em; color: #ffff00;"></p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <button onclick="confirmarCompra()" style="background-color: #b30000; padding: 10px 30px; font-size: 1em; cursor: pointer; border: none; border-radius: 5px; color: white; font-weight: bold;">Sim, Vender Minha Alma</button>
+                <button onclick="fecharModal()" style="background-color: #444; padding: 10px 30px; font-size: 1em; cursor: pointer; border: none; border-radius: 5px; color: white; font-weight: bold;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Silent Hill Shop - 2025</p>
+    </footer>
+
+    <script src="pontos.js"></script>
+    <script src="carrinho.js"></script>
+    <script>
+        carregarCarrinho();
+
+        function abrirModal() {
+            const total = document.getElementById('total').textContent.match(/\d+/)[0];
+            const saldo = obterSaldoPontos();
+            
+            document.getElementById('valor-final').textContent = `Total: 🩸 ${total}`;
+            
+            if (saldo < total) {
+                document.getElementById('saldo-aviso').textContent = `❌ Saldo insuficiente! Você tem 🩸 ${saldo}, precisa de 🩸 ${total}`;
+            } else {
+                document.getElementById('saldo-aviso').textContent = `✅ Saldo após compra: 🩸 ${saldo - total}`;
+            }
+            
+            document.getElementById('modal-confirmacao').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal-confirmacao').style.display = 'none';
+        }
+
+        function confirmarCompra() {
+            const total = parseInt(document.getElementById('total').textContent.match(/\d+/)[0]);
+            const saldo = obterSaldoPontos();
+            
+            if (saldo < total) {
+                alert('❌ Você não tem Pontos de Sangue suficientes!');
+                return;
+            }
+            
+            // Deduzir pontos
+            if (deduzirPontos(total)) {
+                const msg = document.getElementById('carrinho-msg');
+                if (msg) {
+                    msg.textContent = `🔴 Parabéns... Sua alma foi vendida! -🩸 ${total} Pontos de Sangue`;
+                    msg.style.display = 'block';
+                    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+                }
+                
+                // Registrar transação
+                registrarTransacao('Compra de Itens', total, 'removido');
+                
+                localStorage.removeItem('carrinho');
+                fecharModal();
+                setTimeout(() => carregarCarrinho(), 500);
+            }
+        }
+
+        function registrarTransacao(descricao, valor, tipo) {
+            let historico = JSON.parse(localStorage.getItem('historico-pontos')) || [];
+            historico.unshift({
+                descricao,
+                valor,
+                tipo,
+                data: new Date().toLocaleString('pt-BR')
+            });
+            if (historico.length > 50) historico.pop();
+            localStorage.setItem('historico-pontos', JSON.stringify(historico));
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal-confirmacao');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        }
+    </script>
+</body>
+</html>

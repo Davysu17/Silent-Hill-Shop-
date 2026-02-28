@@ -1,0 +1,423 @@
+body {
+    background: url('https://wallpaperaccess.com/full/16169158.png') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 60s linear infinite;
+    margin: 0;
+    padding: 0;
+  }
+
+  @keyframes moveBackground {
+  0% { background-position: center center; }
+  50% { background-position: center bottom; }
+  100% { background-position: center center; }
+}
+header {
+    background-color: rgba(0, 0, 0, 0.648);
+    color: white;
+    text-align: center;
+    padding: 20px;
+        }
+
+
+nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+nav ul li {
+display: inline-block;
+margin: 0 15px;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+nav ul li a:hover {
+            color: red;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+.catalogo {
+
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.catalogo h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+.itens-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 20px;
+  }
+
+.filtros {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.filtros h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.filtro-btn {
+    background-color: rgba(100, 100, 100, 0.6);
+    color: white;
+    border: 2px solid #555;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.filtro-btn:hover {
+    background-color: rgba(150, 150, 150, 0.8);
+    border-color: red;
+    transform: scale(1.05);
+}
+
+.filtro-btn.ativo {
+    background-color: #b30000;
+    border-color: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.categoria-badge {
+    display: inline-block;
+    background-color: rgba(200, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin: 10px 0;
+}
+  
+
+.item-card {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .item-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+  }
+
+.item-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: grayscale(0.4) sepia(0.5) brightness(0.85) contrast(1.15);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05), 0 0 20px rgba(150, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.item-card img:hover {
+    transform: scale(1.04) rotate(-0.5deg);
+    filter: grayscale(0.6) sepia(0.7) brightness(0.75) contrast(1.25);
+}
+
+.item-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.item-card p {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.item-card button {
+    background-color: #4a0000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.item-card button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff0000;
+    left: -100%;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.item-card button:hover {
+    background-color: #7a0000;
+    animation: glitch 0.3s ease-in-out;
+}
+
+.item-card button:hover::before {
+    left: 0;
+    opacity: 0.2;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(1px, -1px); }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 1px); }
+    100% { transform: translate(0); }
+}
+
+#loading {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    z-index: 9999;
+}
+
+#loading h1 {
+    font-size: 3em;
+    animation: piscar 1.5s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0.2;}
+}
+
+#carrinho-msg {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: none;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+#carrinho {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+}
+
+#carrinho ul {
+    list-style: none;
+    padding: 0;
+}
+
+#carrinho li {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(50, 50, 50, 0.7);
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#carrinho button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#carrinho button:hover {
+    background-color: red;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.648);
+    margin-top: 50px;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .itens-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .item-card {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .filtro-btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        margin: 3px;
+    }
+
+    .catalogo h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+        font-size: 0.9em;
+    }
+
+    .itens-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        padding: 15px;
+    }
+
+    .filtro-btn {
+        display: block;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+/* Estilos para Modal */
+#modal-confirmacao {
+    display: none !important;
+}
+
+#modal-confirmacao[style*="display: flex"] {
+    display: flex !important;
+}

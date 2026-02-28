@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Davy Freitas E Miguel Brito">
+    <meta name="description" content="Loja temática inspirada em Silent Hill. Troque Suas Gotas Sangue Por Produtos exclusivos!">
+    <title>Silent Hill Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Silent Hill Shop</h1>
+        <h2>Troque Seus Pontos de Sangue Aqui!!</h2>
+        <nav>
+            <ul>
+                <li><a href="Silent-Hill.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carteira.html">🩸 Pontos: <span id="saldo-pontos">0</span></a></li>
+                <li><a href="checkout.html">🛒 Carrinho (<span id="contador-carrinho">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bem-vindo">
+            <h1>Seja Bem Vindo A Nossa Loja</h1>
+            <p><strong>Aqui nessa loja você pode comprar itens que vão te ajudar na sua exploração na cidade Silent Hill</strong></p>
+        </section>
+
+        <section class="catalogo">
+            <h2>Itens da Loja</h2>
+            
+            <div class="filtros">
+                <h3>Filtrar por Categoria:</h3>
+                <button class="filtro-btn ativo" onclick="filtrarPorCategoria('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('armas')">⚔️ Armas</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('documentos')">📄 Documentos</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('sobrevivencia')">🔦 Sobrevivência</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('reliquias')">🔮 Relíquias</button>
+            </div>
+
+            <div class="itens-container" id="itens-container">
+                <div class="item-card" data-categoria="armas">
+                    <img src="https://img.game8.co/4008865/f0ed15ac823544eef4af9e0f408af6c7.png/show" alt="Rádio Antigo">
+                    <h3>Rádio Antigo</h3>
+                    <p>Emite estática perto de criaturas. Não funciona como deveria...</p>
+                    <span class="categoria-badge">⚔️ Armas</span>
+                    <button onclick="adicionarAoCarrinho('Rádio Antigo', 100)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="sobrevivencia">
+                    <img src="https://img.game8.co/4008998/74173e7c125cdddd92313b64ef55db05.png/show" alt="Lanterna velha">
+                    <h3>Lanterna</h3>
+                    <p>Ajuda a iluminar os cantos mais escuros da cidade... e da alma.</p>
+                    <span class="categoria-badge">🔦 Sobrevivência</span>
+                    <button onclick="adicionarAoCarrinho('Lanterna', 20)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="documentos">
+                    <img src="https://img.game8.co/4008912/325c59b40a78557540c4b1b5dc6014f4.png/show" alt="Carta da Mary">
+                    <h3>Carta da Mary</h3>
+                    <p>"em meus sonhos inquietos... eu vejo aquela cidade". A carta que trouxe James de volta ao pesadelo.</p>
+                    <span class="categoria-badge">📄 Documentos</span>
+                    <button onclick="adicionarAoCarrinho('Carta da Mary', 0)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="reliquias">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8p8Z0s8Z0s8Z0s8Z0s8Z0s8Z0s8Z0s" alt="Amuleto Antigo">
+                    <h3>Amuleto Antigo</h3>
+                    <p>Uma relíquia mística que oferece proteção contra as forças sobrenaturais.</p>
+                    <span class="categoria-badge">🔮 Relíquias</span>
+                    <button onclick="adicionarAoCarrinho('Amuleto Antigo', 150)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="sobrevivencia">
+                    <img src="https://img.game8.co/4009081/8d3e5f7a.png/show" alt="Kit de Primeiros Socorros">
+                    <h3>Kit de Primeiros Socorros</h3>
+                    <p>Medicamentos antigos para curar ferimentos causados pelos monstros.</p>
+                    <span class="categoria-badge">🔦 Sobrevivência</span>
+                    <button onclick="adicionarAoCarrinho('Kit de Primeiros Socorros', 75)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="armas">
+                    <img src="https://static.wikia.nocookie.net/silent/images/8/81/Angelasknife.jpg/revision/latest?cb=20140423120901" alt="Faca de Angela">
+                    <h3>Faca de Angela</h3>
+                    <p>Uma arma improvisada com marcas de sangue seco. Melhor não perguntar por quê.</p>
+                    <span class="categoria-badge">⚔️ Armas</span>
+                    <button onclick="adicionarAoCarrinho('Faca de Angela', 45)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="documentos">
+                    <img src="https://img.game8.co/4009083/0f5g7h9c.png/show" alt="Diário de James">
+                    <h3>Diário de James</h3>
+                    <p>As anotações pessoais do protagonista sobre sua jornada sombria pela cidade.</p>
+                    <span class="categoria-badge">📄 Documentos</span>
+                    <button onclick="adicionarAoCarrinho('Diário de James', 35)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="reliquias">
+                    <img src="https://img.game8.co/4009084/1g6h8i0d.png/show" alt="Chave Enferrujada">
+                    <h3>Chave Enferrujada</h3>
+                    <p>Abre portas antigas de um passado esquecido. Qual mistério ela guarda?</p>
+                    <span class="categoria-badge">🔮 Relíquias</span>
+                    <button onclick="adicionarAoCarrinho('Chave Enferrujada', 85)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="documentos">
+                    <img src="https://img.game8.co/4009085/2h7i9j1e.png/show" alt="Nota Manuscrita">
+                    <h3>Nota Manuscrita</h3>
+                    <p>Uma nota encontrada nas ruas de Silent Hill. O que ela revela?</p>
+                    <span class="categoria-badge">📄 Documentos</span>
+                    <button onclick="adicionarAoCarrinho('Nota Manuscrita', 25)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="sobrevivencia">
+                    <img src="https://img.game8.co/4009086/3i8j0k2f.png/show" alt="Corda Resistente">
+                    <h3>Corda Resistente</h3>
+                    <p>Essencial para escapar de situações perigosas. Nunca se sabe quando você vai precisar.</p>
+                    <span class="categoria-badge">🔦 Sobrevivência</span>
+                    <button onclick="adicionarAoCarrinho('Corda Resistente', 40)">Adicionar</button>
+                </div>
+
+                <div class="item-card" data-categoria="armas">
+                    <img src="https://img.game8.co/4009087/4j9k1l3g.png/show" alt="Martelo de Ferro">
+                    <h3>Martelo de Ferro</h3>
+                    <p>Uma arma pesada. Ideal para derrotar criaturas mais resistentes.</p>
+                    <span class="categoria-badge">⚔️ Armas</span>
+                    <button onclick="adicionarAoCarrinho('Martelo de Ferro', 120)">Adicionar</button>
+                </div>
+            </div>
+
+            <div id="carrinho-msg">Item adicionado ao carrinho</div>
+        </section>
+
+        <div class="carrinho-link">
+            <a href="checkout.html" class="botao-carrinho">🛒 Ver Carrinho</a>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Desenvolvido por Davy Freitas E Miguel Brito</strong></p>
+    </footer>
+
+    <script src="pontos.js"></script>
+    <script src="carrinho.js"></script>
+    <script>
+        carregarCarrinho();
+
+        function filtrarPorCategoria(categoria) {
+            const itens = document.querySelectorAll('.item-card');
+            const botoes = document.querySelectorAll('.filtro-btn');
+            
+            botoes.forEach(botao => botao.classList.remove('ativo'));
+            event.target.classList.add('ativo');
+            
+            itens.forEach(item => {
+                if (categoria === 'todos') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = item.getAttribute('data-categoria') === categoria ? 'block' : 'none';
+                }
+            });
+        }
+
+        function mostrarCarrinho() {
+            const msg = document.getElementById('carrinho-msg');
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 2000);
+        }
+
+        document.querySelectorAll('.item-card button').forEach(botao => {
+            botao.addEventListener('click', () => {
+                mostrarCarrinho();
+            });
+        });
+    </script>
+</body>
+</html>

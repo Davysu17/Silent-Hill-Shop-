@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <title>Contatos - Silent Hill Shop</title>
+</head>
+<body>
+    <header>
+        <h1>Fale com a gente!</h1>
+        <nav>
+            <ul>
+                <li><a href="Silent-Hill.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou sugestão? Envie sua mensagem!</p>
+        <form id="formulario-contato" onsubmit="enviarFormulario(event)">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="feedback-contato" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px; text-align: center;"></div>
+        
+        <h2>Ou Fale diretamente!</h2>
+        <ul>
+            <li><a href="https://www.instagram.com/_davysu/" target="_blank">Instagram do Davy</a></li>
+            <li><a href="https://www.instagram.com/___omiguelb/" target="_blank">Instagram do Miguel</a></li>
+        </ul>
+    </main>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const feedback = document.getElementById('feedback-contato');
+            
+            if (nome.trim() === '' || email.trim() === '' || mensagem.trim() === '') {
+                feedback.textContent = '❌ Por favor, preencha todos os campos!';
+                feedback.style.backgroundColor = 'rgba(200, 0, 0, 0.7)';
+                feedback.style.display = 'block';
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                feedback.textContent = '❌ E-mail inválido!';
+                feedback.style.backgroundColor = 'rgba(200, 0, 0, 0.7)';
+                feedback.style.display = 'block';
+                return;
+            }
+            
+            feedback.textContent = '✅ Mensagem enviada com sucesso! Obrigado por entrar em contato.';
+            feedback.style.backgroundColor = 'rgba(0, 150, 0, 0.7)';
+            feedback.style.display = 'block';
+            
+            document.getElementById('formulario-contato').reset();
+            
+            setTimeout(() => {
+                feedback.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+    <footer>
+        <p>Silent Hill Shop - 2025</p>
+    </footer>
+</body>
+</html>

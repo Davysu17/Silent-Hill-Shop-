@@ -1,0 +1,7 @@
+body {
+    background: url('https://gagadget.com/media/post_big/SILENT_HILL_2_20241010233057_owT9LiJ.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 60s linear infinite;
+    margin: 0;
+    padding: 0;
+  }
