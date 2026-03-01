@@ -46,3 +46,53 @@ main {
 h2 {
     color: red;
 }
+main ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+} 
+@keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    display: flex;              
+    align-items: center;        
+    justify-content: center;    
+    gap: 45px;                  
+}
+
+.container img {
+    width: 115px;               
+}
+
+.texto {
+    max-width: 500px;           
+}
+.texto h2 {
+    color: red;                
+    margin-bottom: 20px;        
+}
+
+.container-2 {
+    display: flex;              
+    align-items: center;        
+    justify-content: center;    
+    gap: 45px;                  
+}
+
+.container-2 img {
+    width: 670px;               
+}
+
+.desconhecida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;           
+}
+.desconhecida img {
+    width: 670px;               
+}
