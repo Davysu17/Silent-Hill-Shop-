@@ -1,65 +1,114 @@
 body {
-  background-image: url(https://staticdelivery.nexusmods.com/images/6880/33455435-1729549694.png) no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
+
+background-image: url(https://staticdelivery.nexusmods.com/images/6880/33455435-1729549694.png);
+background-size: cover;
+animation: movebackground 60s linear infinite;
+margin: 0;
+padding: 0;
 }
 
-header {
-  background-color:rgba(0, 0, 0, 0.7);
-  color: white;
-  text-align: center;
-  padding: 20px;
+header
+
+{
+background-color:rgba(0, 0, 0, 0.7);
+color: white;
+text-align: center;
+padding: 20px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+nav ul 
+
+{
+
+list-style: none;
+padding: 0;
+margin: 0;
+
 }
 
-nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+nav ul li
+
+{
+
+display: inline-block;
+margin: 0 15px;
+
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0,3s;
+nav ul li a 
+
+{
+
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: 0,3s;
+
 }
 
-nav ul li a:hover {
-  color: red;
+nav ul li a:hover 
+{
+    color: red;
 }
 
-main {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-}
-h2 {
-  color: red;
-}
-main ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-@keyframes movebackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+main{
+
+max-width: 900px;
+margin: 50px auto;
+padding: 20px;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+border-radius: 10px;
+text-align: center;
+
 }
 
-.container {
-  display: flex;              
-  align-items: center;
-  justify-content: center;
-  gap: 45px;
+main h2 {
+
+color: red;
+margin-top: 20px;
+
 }
+
+main p {
+
+line-height: 1.6;
+text-align: justify;
+}
+
+main iframe {
+
+width: 100%;
+max-width: 640px;
+height: 360px;
+margin: 20px 0;
+border-radius: 10px;
+
+
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.648);
+    margin-top: 50px;
+}
+
+.maria 
+{
+max-width: 300px;
+height: auto;
+display: block;
+object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
