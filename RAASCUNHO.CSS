@@ -1,133 +1,104 @@
 body {
-    background-image: url(https://wallpapercave.com/wp/wp13015655.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
+
+background-image: url(https://staticdelivery.nexusmods.com/images/6880/33455435-1729549694.png);
+background-size: cover;
+animation: movebackground 60s linear infinite;
+margin: 0;
+padding: 0;
 }
-header {
-    background-color: rgba(0, 0, 0, 0.648);
-    color: white;
-    text-align: center;
-    padding: 20px;
-        }
 
+header
 
-nav ul {
+{
+background-color:rgba(0, 0, 0, 0.7);
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+nav ul 
+
+{
+
 list-style: none;
 padding: 0;
 margin: 0;
+
 }
 
-nav ul li {
+nav ul li
+
+{
+
 display: inline-block;
 margin: 0 15px;
+
 }
 
-nav ul li a {
+nav ul li a 
+
+{
+
 color: white;
 text-decoration: none;
 font-weight: bold;
-transition: 0.3s;
+transition: 0,3s;
+
 }
 
-nav ul li a:hover {
-            color: red;
-}
-
-
-main {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-}
-
-h2 {
+nav ul li a:hover 
+{
     color: red;
 }
 
-main ul {
-    list-style: none;
-    padding: 0;
+main{
+
+max-width: 900px;
+margin: 50px auto;
+padding: 20px;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+border-radius: 10px;
+text-align: center;
+
+}
+
+main h2 {
+
+color: red;
+margin-top: 20px;
+
+}
+
+main p {
+
+line-height: 1.6;
+text-align: justify;
+}
+
+main iframe {
+
+width: 100%;
+max-width: 640px;
+height: 360px;
+margin: 20px 0;
+border-radius: 10px;
+
+
+}
+
+footer {
     text-align: center;
-}
-
-main ul li {
-        margin: 10px 0;
-}
-
-main ul li a {
-    font-size: 18px;
     color: white;
-    text-decoration: none;
-    background-color: red;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-main ul li a:hover {
-    background-color: darkred ;
-}
-;
-main {
-    max-width: 600px;
-    margin: 50px auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 10px;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.648);
+    margin-top: 50px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.maria 
+{
+max-width: 300px;
+height: auto;
+display: block;
+object-fit: cover;
 }
-
-label {
-    font-weight: bold;
-    text-align: left;
-}
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #222;
-    color: white;
-}
-
-button {
-    background-color: red;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-button:hover {
-    background-color: darkred;
-}
-
-.imagem-centro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.imagem-centro img {
-    max-width: 100%;
-    height: auto;
-}
- 

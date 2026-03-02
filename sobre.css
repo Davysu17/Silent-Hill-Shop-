@@ -65,9 +65,8 @@ main iframe {
 }
 
 footer {
-    text-align: center;
-    color: white;
-    padding: 20px;
     background-color: rgba(0, 0, 0, 0.648);
-    margin-top: 50px;
+    color: white;
+    text-align: center;
+    padding: 20px
 }
