@@ -52,9 +52,22 @@ main ul {
     padding: 0;
     text-align: center;
 }
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+main ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.Mary-sunderland {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Mary-sunderland img {
+    max-width: 100px;
+}
+
+.texto {
+    max-width: 400px;
 }
