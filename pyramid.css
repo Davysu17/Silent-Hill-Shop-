@@ -51,3 +51,12 @@ main ul li {
     display: inline-block;
     margin: 0 15px;
 }
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
