@@ -96,3 +96,13 @@ main ul {
 .desconhecida img {
     width: 670px;               
 } 
+
+footer {
+    background-color: rgba(0, 0, 0, 0.648);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;
+}

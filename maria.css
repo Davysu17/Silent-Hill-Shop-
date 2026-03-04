@@ -1,10 +1,11 @@
 body {
 
-background-image: url(https://staticdelivery.nexusmods.com/images/6880/33455435-1729549694.png);
+background-image: url(https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/mixcollage-14-oct-2024-04-00-pm-2362.jpg?w=1600&h=900&fit=crop);
 background-size: cover;
-animation: movebackground 60s linear infinite;
-margin: 0;
-padding: 0;
+background-attachment: fixed;
+background-position: center;
+margin: auto;
+padding: auto;
 }
 
 header
