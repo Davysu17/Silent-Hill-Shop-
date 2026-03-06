@@ -39,8 +39,41 @@ main {
     border-radius: 10px;
     text-align: center;
 }
+
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 40px;
+    text-shadow:
+    0 0 5px red,
+    0 0 10px darkred,
+    0 0 20px black;
+}
+h1::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: red;
+    margin-top: 5px;
+}
+h1:hover {
+    animation: tremor 0.2s infinite;
+}
+
+@keyframes tremor {
+    0%{transform:  translate(1px,1px);}
+    25%{transform:  translate(-1px,2px);}
+    50%{transform:  translate(2px,-1px);}
+    75%{transform:  translate(-2px,1px);}
+    100%{transform:  translate(1px,-2px);}
+}
+
 h2 {
     color: red;
+    margin-top: 40px;
+    border-bottom: 2px solid red;
+    padding-bottom: 5px;
 }
 main ul {
     list-style: none;
@@ -56,7 +89,85 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+p {
+    text-align: justify;
+    max-width: 800px;
+    margin: auto;
+}
+
+.conteudo {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.conteudo {
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0;
+           transform: translateY(30px); }
+    to { opacity: 1;
+         transform: translateY(0); 
+    }
+}
+
+.fog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url(https://www.nicepng.com/png/full/804-8047958_fog-png-for-picsart.png);
+    opacity: 0.25;
+    animation: fogmove 115s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fogmove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }

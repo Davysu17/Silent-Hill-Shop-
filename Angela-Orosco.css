@@ -1,6 +1,5 @@
 body {
-
-background-image: url(https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/mixcollage-14-oct-2024-04-00-pm-2362.jpg?w=1600&h=900&fit=crop);
+background-image: url(https://static0.srcdn.com/wordpress/wp-content/uploads/2019/12/silent-hill-angela.jpg);
 background-size: cover;
 background-attachment: fixed;
 background-position: center;
@@ -8,52 +7,31 @@ margin: auto;
 padding: auto;
 }
 
-header
-
-{
+header {
 background-color:rgba(0, 0, 0, 0.7);
 color: white;
 text-align: center;
 padding: 20px;
 }
-
-nav ul 
-
-{
-
+nav ul {
 list-style: none;
 padding: 0;
 margin: 0;
-
 }
-
-nav ul li
-
-{
-
+nav ul li {
 display: inline-block;
 margin: 0 15px;
-
 }
-
-nav ul li a 
-
-{
-
+nav ul li a {
 color: white;
 text-decoration: none;
 font-weight: bold;
 transition: 0,3s;
-
 }
-
-nav ul li a:hover 
-{
+nav ul li a:hover {
     color: red;
 }
-
 main{
-
 max-width: 900px;
 margin: 50px auto;
 padding: 20px;
@@ -61,49 +39,15 @@ background-color: rgba(0, 0, 0, 0.7);
 color: white;
 border-radius: 10px;
 text-align: center;
-
 }
-
-main h2 {
-
+h2 {
 color: red;
-margin-top: 20px;
-
 }
-
-main p {
-
-line-height: 1.6;
-text-align: justify;
+main ul {
+list-style: none;
+padding: 0;
+text-align: center;
 }
-
-main iframe {
-
-width: 100%;
-max-width: 640px;
-height: 360px;
-margin: 20px 0;
-border-radius: 10px;
-
-
-}
-
-footer {
-    text-align: center;
-    color: white;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.648);
-    margin-top: 50px;
-}
-
-.maria 
-{
-max-width: 300px;
-height: auto;
-display: block;
-object-fit: cover;
-}
-
 .container {
 display: flex;
 align-items: center;
@@ -112,25 +56,22 @@ gap: 45px;
 }
 
 .container img {
-width: 615px;
-}
-
-.texto {
-max-width: 500px;
+width: 670px;
 }
 
 .Angela {
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 45px;
 }
-
 .Angela img {
 width: 670px;
 }
 
 
-
-
-
+footer {
+background-color:rgba(0, 0, 0, 0.7);
+color: white;
+text-align: center;
+padding: 10px;
+}
