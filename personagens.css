@@ -1,9 +1,110 @@
 body {
-    background: url('https://assetsio.gnwcdn.com/silent-hill-2-remake2.jpg?width=690&quality=85&format=jpg&dpr=3&auto=webp') no-repeat center center fixed;
-    background-size: cover;
+    overflow-x: hidden;
+    background-attachment: fixed;
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.angela {
+    background-image: url(fotos\ silent\ hill\ shop/silent-hill-angela.avif);
+}
+.containerangela {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.containerangela img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.containerangela img:hover {
+    transform: scale(1.05);
+}
+.james {
+    background-image: url(fotos\ silent\ hill\ shop/james2.jpg);
+}
+.containerjames {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.containerjames img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.containerjames img:hover {
+    transform: scale(1.05);
+}
+.maria {
+    background-image: url(fotos\ silent\ hill\ shop/mariaejames.avif);
+}
+.containermaria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.containermaria img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.containermaria img:hover {
+    transform: scale(1.05);
+}
+.pyramid {
+    background-image: url(fotos\ silent\ hill\ shop/pyramid.head.3.webp);
+}
+.containerpyramid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.containerpyramid img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.containerpyramid img:hover {
+    transform: scale(1.05);
+}
+.mary {
+    background-image: url(fotos\ silent\ hill\ shop/mary.avif);
+}
+.containermary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.containermary img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.containermary img:hover {
+    transform: scale(1.05);
 }
 header {
     background-color: rgba(0, 0, 0, 0.7);
@@ -43,7 +144,7 @@ main {
 h1 {
     color: red;
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     text-shadow:
     0 0 5px red,
     0 0 10px darkred,
@@ -89,10 +190,17 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    width: 100%;
-    bottom: 0;
+}
+footer nav{
+    margin-top: 15px;
 }
 
+footer p {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid red;
+    text-align: center;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -161,7 +269,7 @@ p {
     left: 0;
     width: 200%;
     height: 100%;
-    background: url(https://www.nicepng.com/png/full/804-8047958_fog-png-for-picsart.png);
+    background: url(fotos\ silent\ hill\ shop/fog.png) repeat-x;
     opacity: 0.25;
     animation: fogmove 115s linear infinite;
     pointer-events: none;
