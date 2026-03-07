@@ -279,3 +279,29 @@ p {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .conteudo {
+        padding: 20px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 26px;
+    }
+}
