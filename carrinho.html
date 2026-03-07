@@ -24,7 +24,7 @@
             <h2>Itens no seu carrinho</h2>
             <div id="carrinho-vazio" style="display: none; text-align: center; color: #ccc;">
                 <p>Seu carrinho está vazio 😢</p>
-                <a href="Silent-Hill.html" style="color: red; text-decoration: underline;">Voltar ao catálogo</a>
+                <a href="index.html" style="color: red; text-decoration: underline;">Voltar ao catálogo</a>
             </div>
             <ul id="lista-carrinho"></ul>
             <p id="total" style="font-size: 1.3em; color: #ff0000; font-weight: bold;">Total: 🩸 0</p>
@@ -37,7 +37,7 @@
     <div id="modal-confirmacao" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 10000; display: flex; align-items: center; justify-content: center;">
         <div style="background: rgba(0, 0, 0, 0.9); color: white; padding: 40px; border-radius: 10px; text-align: center; border: 2px solid red; max-width: 400px;">
             <h2 style="color: red; margin-bottom: 20px;">⚠️ Confirmação Final</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">Sua alma será vendida para Silent Hill...</p>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Sua compra será concluída.</p>
             <p id="valor-final" style="font-size: 1.3em; color: #ff0000; margin-bottom: 10px; font-weight: bold;">Total: 🩸 0</p>
             <p id="saldo-aviso" style="font-size: 0.95em; color: #ffff00;"></p>
             <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
@@ -88,7 +88,7 @@
             if (deduzirPontos(total)) {
                 const msg = document.getElementById('carrinho-msg');
                 if (msg) {
-                    msg.textContent = `🔴 Parabéns... Sua alma foi vendida! -🩸 ${total} Pontos de Sangue`;
+                    msg.textContent = `🔴 Parabéns! Compra realizada com sucesso! -🩸 ${total} Pontos de Sangue`;
                     msg.style.display = 'block';
                     setTimeout(() => { msg.style.display = 'none'; }, 3000);
                 }
