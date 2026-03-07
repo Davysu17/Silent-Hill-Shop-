@@ -8,7 +8,7 @@ body {
     color: white;
 }
 .angela {
-    background-image: url(fotos\ silent\ hill\ shop/silent-hill-angela.avif);
+    background-image: url(../fotos\ silent\ hill\ shop/silent-hill-angela.avif);
 }
 .containerangela {
     display: flex;
@@ -28,7 +28,7 @@ body {
     transform: scale(1.05);
 }
 .james {
-    background-image: url(fotos\ silent\ hill\ shop/james2.jpg);
+    background-image: url(../fotos\ silent\ hill\ shop/james2.jpg);
 }
 .containerjames {
     display: flex;
@@ -48,7 +48,7 @@ body {
     transform: scale(1.05);
 }
 .maria {
-    background-image: url(fotos\ silent\ hill\ shop/mariaejames.avif);
+    background-image: url(../fotos\ silent\ hill\ shop/mariaejames.avif);
 }
 .containermaria {
     display: flex;
@@ -68,7 +68,7 @@ body {
     transform: scale(1.05);
 }
 .pyramid {
-    background-image: url(fotos\ silent\ hill\ shop/pyramid.head.3.webp);
+    background-image: url(../fotos\ silent\ hill\ shop/pyramid.head.3.webp);
 }
 .containerpyramid {
     display: flex;
@@ -87,7 +87,7 @@ body {
     transform: scale(1.05);
 }
 .mary {
-    background-image: url(fotos\ silent\ hill\ shop/mary.avif);
+    background-image: url(../fotos\ silent\ hill\ shop/mary.avif);
 }
 .containermary {
     display: flex;
@@ -269,7 +269,7 @@ p {
     left: 0;
     width: 200%;
     height: 100%;
-    background: url(fotos\ silent\ hill\ shop/fog.png) repeat-x;
+    background: url(../fotos\ silent\ hill\ shop/fog.png) repeat-x;
     opacity: 0.25;
     animation: fogmove 115s linear infinite;
     pointer-events: none;
