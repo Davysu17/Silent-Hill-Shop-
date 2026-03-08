@@ -6,6 +6,10 @@ body {
     padding: 0;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   @keyframes moveBackground {
   0% { background-position: center center; }
   50% { background-position: center bottom; }
@@ -346,8 +350,17 @@ footer {
     margin-top: 50px;
 }
 
+.container {
+    display: flex;
+    gap: 20px;
+}
+
 /* Responsividade Mobile */
 @media (max-width: 768px) {
+.container {
+    flex-direction: column;
+    text-align: center;
+}
     header {
         padding: 15px;
     }
