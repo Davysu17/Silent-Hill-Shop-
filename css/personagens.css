@@ -106,6 +106,15 @@ body {
 .containermary img:hover {
     transform: scale(1.05);
 }
+.eddie {
+    background-image: url(../fotos/Eddie-boss-fight-Silent-Hill-2-Remake.webp);
+}
+.containereddie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 header {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
